@@ -1,0 +1,11 @@
+# 添加 native 目录中的 C++ 文件
+add_subdirectory(native)
+
+cmake_minimum_required(VERSION 3.4.1)
+project(NativeKeyModule)
+
+# 添加C++源文件
+add_library(native_key_module SHARED native_key_module.cpp)
+
+# 链接必要的库（根据实际需要修改）
+target_link_libraries(native_key_module PRIVATE iot_gpio native_engine)

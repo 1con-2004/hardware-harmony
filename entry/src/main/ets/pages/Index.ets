@@ -1,20 +1,20 @@
+// 导入自定义的按键组件
+import {ButtonControls} from '../components/ButtonControls'
+
 @Entry
 @Component
-struct Index {
-  @State message: string = 'Hello';
-
+struct MainAbility {
   build() {
-    RelativeContainer() {
-      Text(this.message)
-        .id('HelloWorld')
-        .fontSize(50)
-        .fontWeight(FontWeight.Bold)
-        .alignRules({
-          center: { anchor: '__container__', align: VerticalAlign.Center },
-          middle: { anchor: '__container__', align: HorizontalAlign.Center }
-        })
+    Column({ space: 10 }) {
+      // 使用封装的按键组件
+      ButtonControls()
+
+      // 你还可以添加其他页面的逻辑和UI
+      Text('This is the main page!')
+        .fontSize(20)
+        .width('100%')
+        .height(40)
+        .backgroundColor(Color.Gray)
     }
-    .height('100%')
-    .width('100%')
   }
 }
